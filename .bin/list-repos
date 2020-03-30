@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+mkdir -p "$HOME/repos"
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWUPSTREAM=auto
+
+source ~/.gitprompt
+
+find "$HOME/repos" -mindepth 1 -maxdepth 1 -not -name '.*' | while read file; do
+    (
+        if [ -d "$file" ]; then
+            cd "$file"
+            __git_ps1 '' '' '%s'
+        fi
+        if [ -z "$PS1" ]; then
+            PS1='%F{red}untracked%f'
+        fi
+        echo "$file	${(%)PS1}"
+    ) &
+done | sed "s#$HOME/repos/##" | sort | column -t -s $'\t'

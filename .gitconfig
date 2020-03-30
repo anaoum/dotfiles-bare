@@ -1,0 +1,10 @@
+[alias]
+    logk = log --graph --all --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset | %Cblue%ae%Creset | %C(magenta)%ar%Creset | %s'
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[core]
+    excludesfile = ~/.gitignore
+[push]
+    default = simple
