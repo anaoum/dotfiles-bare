@@ -23,30 +23,8 @@ Depending on your system, you may need to manually install or upgrade to the fol
 
 ## Install
 
-Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the setup script to see exactly what it does.
+Run the following commands in your terminal. It should not do anything destructive. Check out the setup script to see exactly what it does.
 
 ```bash
-git clone https://github.com/anaoum/dotfiles.git ~/repos/dotfiles
-~/repos/dotfiles/setup.sh
-```
-
-After installing, open a new terminal window to see the effects.
-
-## Uninstall
-
-To remove the dotfile configs, run the following commands:
-
-```bash
-unlink ~/.aliases
-unlink ~/.bashrc
-unlink ~/.bin
-unlink ~/.gitconfig
-unlink ~/.gitignore
-unlink ~/.gitprompt
-unlink ~/.profile
-unlink ~/.ssh
-unlink ~/.tmux.conf
-unlink ~/.vimrc
-unlink ~/.zshrc
-rm -rf ~/repos/dotfiles
+wget -O - https://raw.githubusercontent.com/anaoum/dotfiles-bare/master/setup.sh | bash
 ```

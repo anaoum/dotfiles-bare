@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd ~
 git clone --bare https://github.com/anaoum/dotfiles-bare.git .git
 
