@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~
-git clone --bare https://github.com/anaoum/dotfiles.git .git
+git clone --bare https://github.com/anaoum/dotfiles-bare.git .git
 
 cd .git
 git config core.bare false
